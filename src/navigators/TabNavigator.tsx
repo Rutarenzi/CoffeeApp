@@ -7,6 +7,7 @@ import FavoritesScreen from '../screens/FavoritesScreen';
 import OrderHistoryScreen from '../screens/OrderHistoryScreen';
 import { COLORS } from '../theme/theme';
 import { BlurView } from 'expo-blur';
+import CustomIcon from '../components/CustomIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,13 +19,69 @@ const TabNavigator = () => {
         tabBarShowLabel: false,
         tabBarStyle:styles.tabBarStyle,
         tabBarBackground: ()=>{
-            return <BlurView style={styles.blur} intensity={100}/>;
+            return <BlurView style={styles.blur} intensity={50}/>;
         }
         }}>
-        <Tab.Screen name="Home" component={HomeScreen}></Tab.Screen>
-        <Tab.Screen name="Cart" component={CartScreen}></Tab.Screen>
-        <Tab.Screen name="Favorites" component={FavoritesScreen}></Tab.Screen>
-        <Tab.Screen name="History" component={OrderHistoryScreen}></Tab.Screen>
+        <Tab.Screen 
+        name="Home" 
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({focused,color,size})=>(
+            <CustomIcon 
+            name="home"
+            size={25}
+            color={
+              focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+            }
+            />
+          )
+        }}
+        ></Tab.Screen>
+        <Tab.Screen 
+        name="cart" 
+        component={CartScreen}
+        options={{
+          tabBarIcon: ({focused,color,size})=>(
+            <CustomIcon 
+            name="cart"
+            size={25}
+            color={
+              focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+            }
+            />
+          )
+        }}
+        ></Tab.Screen>
+        <Tab.Screen 
+        name="Favorites" 
+        component={FavoritesScreen}
+        options={{
+          tabBarIcon: ({focused,color,size})=>(
+            <CustomIcon 
+            name="heart-sharp"
+            size={25}
+            color={
+              focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+            }
+            />
+          )
+        }}
+        ></Tab.Screen>
+        <Tab.Screen 
+        name="History" 
+        component={OrderHistoryScreen}
+        options={{
+          tabBarIcon: ({focused,color,size})=>(
+            <CustomIcon 
+            name="notifications"
+            size={25}
+            color={
+              focused ? COLORS.primaryOrangeHex : COLORS.primaryLightGreyHex
+            }
+            />
+          )
+        }}
+        ></Tab.Screen>
     </Tab.Navigator>
   )
 }

@@ -2,11 +2,13 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient';
 import { COLORS, SPACING } from '../theme/theme';
+import CustomIcon from './CustomIcon';
+
 
 interface GradientBGIconProps {
     name: string;
     color: string;
-    size: string
+    size: number
 }
 
 const GradientBGIcon:React.FC<GradientBGIconProps> = ({name,color,size}) => {
@@ -16,7 +18,7 @@ const GradientBGIcon:React.FC<GradientBGIconProps> = ({name,color,size}) => {
       colors={[COLORS.primaryDarkGreyHex,COLORS.primaryBlackHex]}
       style={styles.linearGradientBG}
       >
-        
+        <CustomIcon name={name} size={size} color={color}/>
       </LinearGradient>
     </View>
   )
