@@ -9,15 +9,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 0,
+    index: 0
   },
   {
     id: 'C2',
@@ -29,15 +29,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 1,
+    index: 1
   },
   {
     id: 'C3',
@@ -49,15 +49,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 2,
+    index: 2
   },
   {
     id: 'C4',
@@ -69,15 +69,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 3,
+    index: 3
   },
   {
     id: 'C5',
@@ -89,15 +89,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 4,
+    index: 4
   },
   {
     id: 'C6',
@@ -109,15 +109,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 5,
+    index: 5
   },
   {
     id: 'C7',
@@ -129,15 +129,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 6,
+    index: 6
   },
   {
     id: 'C8',
@@ -149,15 +149,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 7,
+    index: 7
   },
   {
     id: 'C9',
@@ -169,15 +169,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 8,
+    index: 8
   },
   {
     id: 'C10',
@@ -189,15 +189,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 9,
+    index: 9
   },
   {
     id: 'C11',
@@ -209,15 +209,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 10,
+    index: 10
   },
   {
     id: 'C12',
@@ -229,15 +229,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 11,
+    index: 11
   },
   {
     id: 'C13',
@@ -249,15 +249,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 12,
+    index: 12
   },
   {
     id: 'C14',
@@ -269,15 +269,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 13,
+    index: 13
   },
   {
     id: 'C15',
@@ -289,15 +289,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 14,
+    index: 14
   },
   {
     id: 'C16',
@@ -309,15 +309,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 15,
+    index: 15
   },
   {
     id: 'C17',
@@ -329,15 +329,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 16,
+    index: 16
   },
   {
     id: 'C18',
@@ -349,15 +349,15 @@ const CoffeeData = [
     ingredients: 'Milk',
     special_ingredient: 'With Steamed Milk',
     prices: [
-      {size: 'S', price: '1.38', currency: '$'},
-      {size: 'M', price: '3.15', currency: '$'},
-      {size: 'L', price: '4.29', currency: '$'},
+      { size: 'S', price: '1.38', currency: '$' },
+      { size: 'M', price: '3.15', currency: '$' },
+      { size: 'L', price: '4.29', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Coffee',
-    index: 17,
-  },
-];
-export default CoffeeData;
+    index: 17
+  }
+]
+export default CoffeeData

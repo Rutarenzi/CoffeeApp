@@ -1,36 +1,35 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { FONTFAMILY, FONTSIZE, SPACING,COLORS } from '../theme/theme'
+import { StyleSheet, Text, View } from 'react-native'
+
 import GradientBGIcon from './GradientBGIcon'
 import ProfilePc from './ProfilePc'
+import { FONTFAMILY, FONTSIZE, SPACING, COLORS } from '../theme/theme'
 
 interface HeaderBarProps {
-    title?:string
+  title?: string
 }
 
-const HeaderBar: React.FC<HeaderBarProps> = ({title}) => {
-
+const HeaderBar: React.FC<HeaderBarProps> = ({ title }) => {
   return (
     <View style={styles.HeaderContainer}>
-        <GradientBGIcon name='menu' color={COLORS.primaryGreyHex} size={FONTSIZE.size_16}/>
+      <GradientBGIcon name="menu" color={COLORS.primaryGreyHex} size={FONTSIZE.size_16} />
       <Text style={styles.HeaderText}>{title}</Text>
       <ProfilePc />
     </View>
   )
 }
 const styles = StyleSheet.create({
-    HeaderContainer: {
-        padding: SPACING.space_30,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-    },
-    HeaderText: {
-        // fontFamily: FONTFAMILY.poppins_semibold,
-        fontSize: FONTSIZE.size_20,
-        color: COLORS.primaryWhiteHex
-    }
+  HeaderContainer: {
+    padding: SPACING.space_30,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between'
+  },
+  HeaderText: {
+    fontFamily: FONTFAMILY.poppins_semibold,
+    fontSize: FONTSIZE.size_20,
+    color: COLORS.primaryWhiteHex
+  }
 })
 
 export default HeaderBar
-

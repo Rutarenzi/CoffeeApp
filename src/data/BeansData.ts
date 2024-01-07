@@ -9,15 +9,15 @@ const BeansData = [
     ingredients: 'Africa',
     special_ingredient: 'From Africa',
     prices: [
-      {size: '250gm', price: '5.50', currency: '$'},
-      {size: '500gm', price: '10.50', currency: '$'},
-      {size: '1Kg', price: '18.50', currency: '$'},
+      { size: '250gm', price: '5.50', currency: '$' },
+      { size: '500gm', price: '10.50', currency: '$' },
+      { size: '1Kg', price: '18.50', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Bean',
-    index: 0,
+    index: 0
   },
   {
     id: 'B2',
@@ -29,15 +29,15 @@ const BeansData = [
     ingredients: 'Africa',
     special_ingredient: 'From Africa',
     prices: [
-      {size: '250gm', price: '5.50', currency: '$'},
-      {size: '500gm', price: '10.50', currency: '$'},
-      {size: '1Kg', price: '18.50', currency: '$'},
+      { size: '250gm', price: '5.50', currency: '$' },
+      { size: '500gm', price: '10.50', currency: '$' },
+      { size: '1Kg', price: '18.50', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Bean',
-    index: 1,
+    index: 1
   },
   {
     id: 'B3',
@@ -49,15 +49,15 @@ const BeansData = [
     ingredients: 'Malaysia',
     special_ingredient: 'From Malaysia',
     prices: [
-      {size: '250gm', price: '5.50', currency: '$'},
-      {size: '500gm', price: '10.50', currency: '$'},
-      {size: '1Kg', price: '18.50', currency: '$'},
+      { size: '250gm', price: '5.50', currency: '$' },
+      { size: '500gm', price: '10.50', currency: '$' },
+      { size: '1Kg', price: '18.50', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Bean',
-    index: 2,
+    index: 2
   },
   {
     id: 'B4',
@@ -69,15 +69,15 @@ const BeansData = [
     ingredients: 'Malaysia',
     special_ingredient: 'From Malaysia',
     prices: [
-      {size: '250gm', price: '5.50', currency: '$'},
-      {size: '500gm', price: '10.50', currency: '$'},
-      {size: '1Kg', price: '18.50', currency: '$'},
+      { size: '250gm', price: '5.50', currency: '$' },
+      { size: '500gm', price: '10.50', currency: '$' },
+      { size: '1Kg', price: '18.50', currency: '$' }
     ],
     average_rating: 4.7,
     ratings_count: '6,879',
     favourite: false,
     type: 'Bean',
-    index: 3,
-  },
-];
-export default BeansData;
+    index: 3
+  }
+]
+export default BeansData
