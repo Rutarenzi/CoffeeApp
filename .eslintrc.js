@@ -1,7 +1,7 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
-    plugins: ['@typescript-eslint','jest'],
-    extends: ['universe', 'universe/shared/typescript-analysis', 'plugin:react-hooks/recommended'],
+    plugins: ['@typescript-eslint','jest','testing-library'],
+    extends: ['universe', 'universe/shared/typescript-analysis', 'plugin:react-hooks/recommended','plugin:testing-library/react','plugin:jest-dom/recommended'],
     overrides: [
       {
         files: ['*.ts', '*.tsx', '*.d.ts'],

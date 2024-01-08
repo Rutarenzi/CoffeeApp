@@ -1,14 +1,14 @@
-import { render } from '@testing-library/react-native';
-import App from "../App";
+import { render } from '@testing-library/react-native'
 
-describe('App testing',()=>{
-    it('should mount without error',()=>{
-        expect(()=> render(<App/>)).not.toThrow()
-    })
+import App from '../App'
 
-    it('should unmount withou errors',()=>{
-        const { unmount } = render(<App/>)
-        expect(()=> unmount()).not.toThrow()
-    })
+describe('App testing', () => {
+  it('should mount without error', () => {
+    expect(() => render(<App />)).not.toThrow()
+  })
+
+  it('should unmount withou errors', () => {
+    const { unmount } = render(<App />)
+    expect(() => unmount()).not.toThrow()
+  })
 })
-
