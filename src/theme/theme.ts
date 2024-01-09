@@ -87,6 +87,7 @@ export const FONTFAMILY: FontFamily = {
 }
 
 interface FontSize {
+  space_20: number
   size_8: number
   size_10: number
   size_12: number
@@ -109,7 +110,8 @@ export const FONTSIZE: FontSize = {
   size_20: 20,
   size_24: 24,
   size_28: 28,
-  size_30: 30
+  size_30: 30,
+  space_20: 0
 }
 
 interface BorderRadius {

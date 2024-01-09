@@ -13,17 +13,17 @@ const useStore = create(
       CoffeeList: CoffeeData,
       BeanList: BeansData,
       CartPrice: 0,
-      FavoriteList: [],
+      FavoritesList: [],
       CartList: [],
       OrderHistoryList: [],
       addToCart: (cartItem: any) => set(
         produce((state) =>{
          let found = false;
          for(let i =0 ; i < state.CartList.length; i++){
-          if(state.CartList[i].id == cartItem.id){
+          if(state.CartList[i]?.id == cartItem.id){
             found = true;
             let size = false;
-            for(let j=0; j<state.CartList[i].prices.length; j++){
+            for(let j=0; j<state.CartList[i]?.prices.length; j++){
               if(state.CartList[i].prices[j].size == cartItem.prices[0].size){
                 state.CartList[i].prices[j].quantity++;
                 break;
@@ -32,7 +32,7 @@ const useStore = create(
             if(size== false){
               state.CartList[i].prices.push(cartItem.prices[0]);
             }
-            state.CartList[i].price.sort((a:any, b:any)=>{
+            state.CartList[i].prices.sort((a:any, b:any)=>{
               if(a.size > b.size){
                 return -1;
               }
@@ -49,16 +49,20 @@ const useStore = create(
          }
       }),
       ),
-      calacualteCartPrice:()=>set(produce(state => {
+      calculateCartPrice:()=>
+      set(produce(state => {
         let totalprice = 0;
         for(let i=0; i<state.CartList.length;i++){
           let tempprice = 0;
-          for(let j=0; j<state.CartList[i].prices.length;j++){
-            tempprice = tempprice + parseFloat(state.CartList[i].prices[j].price)*
-            state.CartList[i].prices(j).quantity;
+          for(let j=0; j<state.CartList[i]?.prices.length;j++){
+            tempprice = tempprice + parseFloat(state.CartList[i]?.prices[j].price)*
+            state.CartList[i]?.prices[j].quantity;
           }
-          state.CartList[i].ItemPrice = tempprice.toFixed(2).toString();
-          totalprice = totalprice + tempprice;
+          if(state.CartList[i]){
+            state.CartList[i].ItemPrice =tempprice.toFixed(2).toString();
+            totalprice = totalprice + tempprice;
+          }
+          
         }
         state.CartPrice = totalprice.toFixed(2).toString();
       }),
