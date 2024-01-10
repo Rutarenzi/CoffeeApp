@@ -21,7 +21,7 @@ import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/th
 const getCategoriesFromData = (data: any) => {
   const temp: any = {}
   for (let i = 0; i < data.length; i++) {
-    if (temp[data[i].name] == undefined) {
+    if (temp[data[i].name] === undefined) {
       temp[data[i].name] = 1
     } else {
       temp[data[i].name]++
@@ -32,10 +32,10 @@ const getCategoriesFromData = (data: any) => {
   return categories
 }
 const getCoffeeList = (category: any, data: any) => {
-  if (category == 'All') {
+  if (category === 'All') {
     return data
   } else {
-    const coffeelist = data.filter((item: any) => item.name == category)
+    const coffeelist = data.filter((item: any) => item.name === category)
     return coffeelist
   }
 }
@@ -150,12 +150,12 @@ const HomeScreen = ({ navigation }: any) => {
                 <Text
                   style={[
                     styles.CategoryText,
-                    categoryIndex.index == index ? { color: COLORS.primaryOrangeHex } : {}
+                    categoryIndex.index === index ? { color: COLORS.primaryOrangeHex } : {}
                   ]}
                 >
                   {data}
                 </Text>
-                {categoryIndex.index == index ? <View style={styles.ActiveCategory} /> : <></>}
+                {categoryIndex.index === index ? <View style={styles.ActiveCategory} /> : <></>}
               </TouchableOpacity>
             </View>
           ))}
@@ -177,7 +177,11 @@ const HomeScreen = ({ navigation }: any) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push('Details')
+                  navigation.push('Details',{
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                  })
                 }}
               >
                 <CoffeeCard
@@ -208,7 +212,11 @@ const HomeScreen = ({ navigation }: any) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push('Details')
+                  navigation.push('Details',{
+                    index: item.index,
+                    id: item.id,
+                    type: item.type,
+                  })
                 }}
               >
                 <CoffeeCard
