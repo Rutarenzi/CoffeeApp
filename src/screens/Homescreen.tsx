@@ -44,8 +44,8 @@ const getCoffeeList = (category: any, data: any) => {
 const HomeScreen = ({ navigation }: any) => {
   const CoffeeList = useStore((state: any) => state.CoffeeList)
   const BeanList = useStore((state: any) => state.BeanList)
-  const addToCart = useStore((state: any)=>state.addToCart)
-  const CalculateCartPrice =useStore((state:any)=>state.calculateCartPrice)
+  const addToCart = useStore((state: any) => state.addToCart)
+  const CalculateCartPrice = useStore((state: any) => state.calculateCartPrice)
   const [categories, setCategories] = useState(getCategoriesFromData(CoffeeList))
   const [searchText, setSearchText] = useState('')
   const [categoryIndex, setCategoryIndex] = useState({
@@ -93,23 +93,24 @@ const HomeScreen = ({ navigation }: any) => {
     special_ingredient,
     type,
     prices
-   }:any)=>{
-     addToCart({
-       id,
-    index,
-    name,
-    roasted,
-    imagelink_square,
-    special_ingredient,
-    type,
-    prices
-     });
-     CalculateCartPrice();
-    ToastAndroid.showWithGravity(`${name} is Added to Cart`,
-    ToastAndroid.SHORT,
-    ToastAndroid.CENTER
+  }: any) => {
+    addToCart({
+      id,
+      index,
+      name,
+      roasted,
+      imagelink_square,
+      special_ingredient,
+      type,
+      prices
+    })
+    CalculateCartPrice()
+    ToastAndroid.showWithGravity(
+      `${name} is Added to Cart`,
+      ToastAndroid.SHORT,
+      ToastAndroid.CENTER
     )
-   }
+  }
   return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex} />
@@ -119,7 +120,7 @@ const HomeScreen = ({ navigation }: any) => {
       >
         {/* Header */}
         <HeaderBar title="Rut Coffee" />
-        <Text style={styles.screenTitle}>Find the best{'\n'}Coffee for you</Text>
+        <Text style={styles.screenTitle}>Best{'\n'}Coffee in Kigali</Text>
         {/* search */}
         <View style={styles.InputContainerComponent}>
           <TouchableOpacity
@@ -194,7 +195,7 @@ const HomeScreen = ({ navigation }: any) => {
           ref={ListRef}
           ListEmptyComponent={
             <View style={styles.EmptyListContainer}>
-              <Text style={styles.CategoryText}>No available Coffee</Text>
+              <Text style={styles.CategoryText}>Not available in Kigali</Text>
             </View>
           }
           horizontal={true}
@@ -206,10 +207,10 @@ const HomeScreen = ({ navigation }: any) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push('Details',{
+                  navigation.push('Details', {
                     index: item.index,
                     id: item.id,
-                    type: item.type,
+                    type: item.type
                   })
                 }}
               >
@@ -241,10 +242,10 @@ const HomeScreen = ({ navigation }: any) => {
             return (
               <TouchableOpacity
                 onPress={() => {
-                  navigation.push('Details',{
+                  navigation.push('Details', {
                     index: item.index,
                     id: item.id,
-                    type: item.type,
+                    type: item.type
                   })
                 }}
               >
