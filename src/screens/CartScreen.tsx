@@ -25,7 +25,7 @@ const CartScreen = ({navigation,route}:any) => {
     (state:any)=>state.calculateCartPrice);
     const tabBarHeight = useBottomTabBarHeight();
  const buttonPressHandler=()=>{
-   navigation.push('Payment')
+   navigation.push('Payment',{amount: cartPrice})
  }
  const  incrementCartItemQuantityHandler=(id:string,size: string)=>{
     incrementCartItemQuantity(id,size);
