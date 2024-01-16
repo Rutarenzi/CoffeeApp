@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Coffee App created By Axcel!</Text>
+      <Text>Boilerplate Created by Axcel!</Text>
       <StatusBar style="auto" />
     </View>
   )
