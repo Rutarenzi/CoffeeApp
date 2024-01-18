@@ -14,7 +14,7 @@ import BGIcon from './BGIcon'
 import CustomIcon from './CustomIcon'
 import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme'
 
-const CARD_WIDTH = Dimensions.get('window').width * 0.32
+const CARD_WIDTH = Dimensions.get('window').width * 0.4
 
 interface CoffeeCardProps {
   id: string
@@ -60,19 +60,21 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
         <Text style={styles.CardPriceCurrency}>
           $<Text style={styles.CardPrice}>{price.price}</Text>
         </Text>
-        <TouchableOpacity onPress={() => {
-          buttonPressHandler({
-            id,
-            index,
-            type,
-            rosted,
-            imagelink_square,
-            name,
-            special_ingredient,
-            average_rating,
-            prices:[{...price,quantity:1}],
-          })
-        }}>
+        <TouchableOpacity
+          onPress={() => {
+            buttonPressHandler({
+              id,
+              index,
+              type,
+              rosted,
+              imagelink_square,
+              name,
+              special_ingredient,
+              average_rating,
+              prices: [{ ...price, quantity: 1 }]
+            })
+          }}
+        >
           <BGIcon
             name="add"
             color={COLORS.primaryWhiteHex}

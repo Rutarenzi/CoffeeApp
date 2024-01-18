@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import Lottie from 'lottie-react-native'
 import React from 'react'
-import Lottie from 'lottie-react-native';
+import { StyleSheet, Text, View } from 'react-native'
 interface EmptyListAnimation {
-    title: string;
+  title: string
 }
-const EmptyListAnimation: React.FC<EmptyListAnimation> = ({title}) => {
+const EmptyListAnimation: React.FC<EmptyListAnimation> = ({ title }) => {
   return (
     <View style={styles.EmptyCardContainer}>
       {/* <Lottie
@@ -18,14 +18,13 @@ const EmptyListAnimation: React.FC<EmptyListAnimation> = ({title}) => {
   )
 }
 
-
 const styles = StyleSheet.create({
-    EmptyCardContainer: {
-        flex:1,
-        justifyContent: 'center',
-    },
-    LottieStyle: {
-        height: 300,
-    }
+  EmptyCardContainer: {
+    flex: 1,
+    justifyContent: 'center'
+  },
+  LottieStyle: {
+    height: 300
+  }
 })
 export default EmptyListAnimation
