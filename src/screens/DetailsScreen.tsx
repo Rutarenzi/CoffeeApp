@@ -1,149 +1,186 @@
-import React,{useState} from 'react'
-import { ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
-import useStore from '../store/store'
-import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
-import ImageBackgroundInfo from '../components/ImageBackgroundInfo';
-import PaymentFooter from '../components/PaymentFooter';
+import React, { useState } from 'react'
+import {
+  ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View
+} from 'react-native'
 
-const DetailsScreen = ({navigation, route}: any) => {
-  const ItemOfIndex = useStore((state: any)=>{
-    return route.params.type == 'Coffee' ? state.CoffeeList :state.BeanList
-  })[route.params.index];
-  const addToFavoriteList = useStore((state:any)=> state.addToFavoriteList);
-  const deleteFromFavoriteList = useStore((state:any)=>state.deleteFromFavoriteList)
-  const addToCart = useStore((state: any)=>state.addToCart)
-const CalculateCartPrice =useStore((state:any)=>state.calculateCartPrice)
-  const ToggleFavourite =(favourite:boolean,type:string,id: string)=>{
-    favourite ? deleteFromFavoriteList(type,id): addToFavoriteList(type,id)
+import ImageBackgroundInfo from '../components/ImageBackgroundInfo'
+import PaymentFooter from '../components/PaymentFooter'
+import useStore from '../store/store'
+import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme'
+
+const DetailsScreen = ({ navigation, route }: any) => {
+  const ItemOfIndex = useStore((state: any) => {
+    return route.params.type == 'Coffee' ? state.CoffeeList : state.BeanList
+  })[route.params.index]
+  const addToFavoriteList = useStore((state: any) => state.addToFavoriteList)
+  const deleteFromFavoriteList = useStore((state: any) => state.deleteFromFavoriteList)
+  const addToCart = useStore((state: any) => state.addToCart)
+  const CalculateCartPrice = useStore((state: any) => state.calculateCartPrice)
+  const ToggleFavourite = (favourite: boolean, type: string, id: string) => {
+    favourite ? deleteFromFavoriteList(type, id) : addToFavoriteList(type, id)
   }
 
-  const BackHandler = ()=>{
-    navigation.pop();
-}
+  const BackHandler = () => {
+    navigation.pop()
+  }
 
-const [price,setPrice] = useState(ItemOfIndex.prices[0])
-const [fullDesc,setFullDesc] = useState(false)
+  const [price, setPrice] = useState(ItemOfIndex.prices[0])
+  const [fullDesc, setFullDesc] = useState(false)
 
-const addToCarthandler = ({
- id,
- index,
- name,
- roasted,
- imagelink_square,
- special_ingredient,
- type,
- price
-}:any)=>{
-  addToCart({
+  const addToCarthandler = ({
     id,
- index,
- name,
- roasted,
- imagelink_square,
- special_ingredient,
- type,
- prices:[{...price,quantity:1}]
-  });
-  CalculateCartPrice();
-  navigation.navigate('Cart')
-}
+    index,
+    name,
+    roasted,
+    imagelink_square,
+    special_ingredient,
+    type,
+    price
+  }: any) => {
+    addToCart({
+      id,
+      index,
+      name,
+      roasted,
+      imagelink_square,
+      special_ingredient,
+      type,
+      prices: [{ ...price, quantity: 1 }]
+    })
+    CalculateCartPrice()
+    navigation.navigate('Cart')
+  }
   return (
-
     <View style={styles.ScreenContainer}>
-      <StatusBar backgroundColor={COLORS.primaryBlackHex}/>
+      <StatusBar backgroundColor={COLORS.primaryBlackHex} />
       <ScrollView
-      showsVerticalScrollIndicator={false}
-      contentContainerStyle={styles.ScrollViewFlex}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.ScrollViewFlex}
       >
-      <ImageBackgroundInfo 
-       EnableBackHandler={true}
-       imagelink_portrait={ItemOfIndex.imagelink_portrait}
-       type={ItemOfIndex.type}
-       id={ItemOfIndex.id}
-       favourite={ItemOfIndex.favourite}
-       name={ItemOfIndex.name}
-       special_ingredient={ItemOfIndex.special_ingredient}
-       ingredients={ItemOfIndex.ingredients}
-       average_rating={ItemOfIndex.average_rating}
-       ratings_count={ItemOfIndex.ratings_count}
-       roasted={ItemOfIndex.roasted}
-       BackHandler={BackHandler}
-       ToggleFavourite={ToggleFavourite}
-      />
-      <View style={styles.FooterInfoArea}>
-         <Text style={styles.InfoTitle}>Descriptions</Text>
-         {fullDesc ? 
-         <TouchableWithoutFeedback onPress={()=>{setFullDesc(prev=>!prev)}}>
-          <Text style={styles.DescriptionText}>{ItemOfIndex.description}</Text>
-         </TouchableWithoutFeedback> : 
-         <TouchableWithoutFeedback onPress={()=>{setFullDesc(prev=>!prev)}}>
-          <Text numberOfLines={3} style={styles.DescriptionText}>{ItemOfIndex.description}</Text>
-         </TouchableWithoutFeedback>
-        }
-        <Text style={styles.InfoTitle}>Size</Text>
-      <View style={styles.SizeOuterContainer}>
-       {ItemOfIndex.prices.map((data:any)=>{
-        return <TouchableOpacity key={data.size}
-        onPress={()=>{setPrice(data)}}
-        style={[styles.SizeBox,{
-          borderColor: data.size == price.size ?COLORS.primaryOrangeHex : COLORS.primaryDarkGreyHex
-        }]}
-        >
-          <Text style={[styles.SizeText,{
-            fontSize: ItemOfIndex.type == 'bean' ?
-            FONTSIZE.size_14
-             :FONTSIZE.size_16,
-             color: data.size == price ?
-             COLORS.primaryOrangeHex : 
-             COLORS.secondaryLightGreyHex
-          }]}>{data.size}</Text>
-        </TouchableOpacity>
-       })}
-      </View>
-      </View>
-      <PaymentFooter 
-      price={price} 
-      buttonPressHandler={()=>{
-        addToCarthandler({
-          id:ItemOfIndex.id,
-          index:ItemOfIndex.index,
-          name:ItemOfIndex.name,
-          roasted:ItemOfIndex.roasted,
-          imagelink_square:ItemOfIndex.imagelink_square,
-          special_ingredient:ItemOfIndex.special_ingredient,
-          type:ItemOfIndex.type,
-          price: price
-        })
-      }} 
-      buttonTitle='Add to Cart' />
+        <ImageBackgroundInfo
+          EnableBackHandler={true}
+          imagelink_portrait={ItemOfIndex.imagelink_portrait}
+          type={ItemOfIndex.type}
+          id={ItemOfIndex.id}
+          favourite={ItemOfIndex.favourite}
+          name={ItemOfIndex.name}
+          special_ingredient={ItemOfIndex.special_ingredient}
+          ingredients={ItemOfIndex.ingredients}
+          average_rating={ItemOfIndex.average_rating}
+          ratings_count={ItemOfIndex.ratings_count}
+          roasted={ItemOfIndex.roasted}
+          BackHandler={BackHandler}
+          ToggleFavourite={ToggleFavourite}
+        />
+        <View style={styles.FooterInfoArea}>
+          <Text style={styles.InfoTitle}>Descriptions</Text>
+          {fullDesc ? (
+            <TouchableWithoutFeedback
+              onPress={() => {
+                setFullDesc((prev) => !prev)
+              }}
+            >
+              <Text style={styles.DescriptionText}>{ItemOfIndex.description}</Text>
+            </TouchableWithoutFeedback>
+          ) : (
+            <TouchableWithoutFeedback
+              onPress={() => {
+                setFullDesc((prev) => !prev)
+              }}
+            >
+              <Text numberOfLines={3} style={styles.DescriptionText}>
+                {ItemOfIndex.description}
+              </Text>
+            </TouchableWithoutFeedback>
+          )}
+          <Text style={styles.InfoTitle}>Size</Text>
+          <View style={styles.SizeOuterContainer}>
+            {ItemOfIndex.prices.map((data: any) => {
+              return (
+                <TouchableOpacity
+                  key={data.size}
+                  onPress={() => {
+                    setPrice(data)
+                  }}
+                  style={[
+                    styles.SizeBox,
+                    {
+                      borderColor:
+                        data.size == price.size
+                          ? COLORS.primaryOrangeHex
+                          : COLORS.primaryDarkGreyHex
+                    }
+                  ]}
+                >
+                  <Text
+                    style={[
+                      styles.SizeText,
+                      {
+                        fontSize: ItemOfIndex.type == 'bean' ? FONTSIZE.size_14 : FONTSIZE.size_16,
+                        color:
+                          data.size == price
+                            ? COLORS.primaryOrangeHex
+                            : COLORS.secondaryLightGreyHex
+                      }
+                    ]}
+                  >
+                    {data.size}
+                  </Text>
+                </TouchableOpacity>
+              )
+            })}
+          </View>
+        </View>
+        <PaymentFooter
+          price={price}
+          buttonPressHandler={() => {
+            addToCarthandler({
+              id: ItemOfIndex.id,
+              index: ItemOfIndex.index,
+              name: ItemOfIndex.name,
+              roasted: ItemOfIndex.roasted,
+              imagelink_square: ItemOfIndex.imagelink_square,
+              special_ingredient: ItemOfIndex.special_ingredient,
+              type: ItemOfIndex.type,
+              price
+            })
+          }}
+          buttonTitle="Add to Cart"
+        />
       </ScrollView>
     </View>
   )
 }
 const styles = StyleSheet.create({
   ScreenContainer: {
-    flex:1,
-    backgroundColor: COLORS.primaryBlackHex,
+    flex: 1,
+    backgroundColor: COLORS.primaryBlackHex
   },
-  ScrollViewFlex:{
+  ScrollViewFlex: {
     flexGrow: 1,
     justifyContent: 'space-between'
   },
   FooterInfoArea: {
-    padding: SPACING.space_20,
+    padding: SPACING.space_20
   },
   InfoTitle: {
     fontFamily: FONTFAMILY.poppins_semibold,
     fontSize: FONTSIZE.size_16,
-    color:COLORS.primaryWhiteHex,
-    marginBottom: SPACING.space_10,
+    color: COLORS.primaryWhiteHex,
+    marginBottom: SPACING.space_10
   },
-  DescriptionText: { 
+  DescriptionText: {
     letterSpacing: 0.5,
     fontFamily: FONTFAMILY.poppins_regular,
     fontSize: FONTSIZE.size_14,
-    color:COLORS.primaryWhiteHex,
-    marginBottom: SPACING.space_30,
+    color: COLORS.primaryWhiteHex,
+    marginBottom: SPACING.space_30
   },
   SizeOuterContainer: {
     flex: 1,
@@ -153,15 +190,15 @@ const styles = StyleSheet.create({
   },
   SizeBox: {
     flex: 1,
-    backgroundColor:COLORS.primaryDarkGreyHex,
+    backgroundColor: COLORS.primaryDarkGreyHex,
     alignItems: 'center',
     justifyContent: 'center',
     height: SPACING.space_24 * 2,
     borderRadius: BORDERRADIUS.radius_10,
-    borderWidth: 2,
+    borderWidth: 2
   },
   SizeText: {
-   fontFamily: FONTFAMILY.poppins_medium
+    fontFamily: FONTFAMILY.poppins_medium
   }
 })
 
