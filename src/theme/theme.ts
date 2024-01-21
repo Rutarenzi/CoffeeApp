@@ -49,7 +49,7 @@ interface Color {
 
 export const COLORS: Color = {
   primaryRedHex: '#DC3535',
-  primaryOrangeHex: '#D17842',
+  primaryOrangeHex: '#fbe198',
   primaryBlackHex: '#0C0F14',
   primaryDarkGreyHex: '#141921',
   secondaryDarkGreyHex: '#21262E',
