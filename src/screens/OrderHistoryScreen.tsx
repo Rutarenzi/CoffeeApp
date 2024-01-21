@@ -1,15 +1,23 @@
 import React from 'react'
-import { ScrollView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import useStore from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
-import { COLORS, SPACING } from '../theme/theme';
+import { BORDERRADIUS, COLORS, FONTFAMILY, FONTSIZE, SPACING } from '../theme/theme';
 import HeaderBar from '../components/HeaderBar';
 import OrderHistoryCard from '../components/OrderHistoryCard';
 
-const OrderHistoryScreen = () => {
+const OrderHistoryScreen = ({navigation}:any) => {
 const OrderHistoryList = useStore((state: any)=>state.OrderHistoryList)
 const tabBarHeight = useBottomTabBarHeight();
-  return (
+const navigationHandler =({index,id,type}:any)=>{
+navigation.push('Details',{
+  index,
+  id,
+  type
+})
+}
+
+return (
     <View style={styles.ScreenContainer}>
       <StatusBar backgroundColor={COLORS.primaryBlackHex}/>
       <ScrollView
@@ -24,7 +32,7 @@ const tabBarHeight = useBottomTabBarHeight();
           {OrderHistoryList.map((data: any,index:any)=>(
             <OrderHistoryCard 
             key={index.toString()}
-            navigationHandler={()=>{}}
+            navigationHandler={navigationHandler}
             CartItem={data.CartList}
             CartListPrice={data.CartListPrice}
             OrderDate={data.OrderDate}
@@ -33,6 +41,15 @@ const tabBarHeight = useBottomTabBarHeight();
         </View>
       )}
       </View>
+   {OrderHistoryCard.length > 0?(
+    <TouchableOpacity style={styles.DownloadButton}
+    onPress={()=>{
+      buttonPressHandler();
+    }}
+    >
+       <Text style={styles.ButtonText}>DownLoad</Text>
+    </TouchableOpacity>
+   ):<></>}
     </View>
       </ScrollView>
     </View>
@@ -57,6 +74,19 @@ const styles = StyleSheet.create({
   ListItemContainer: {
     paddingHorizontal:SPACING.space_20,
     gap: SPACING.space_30
+  },
+  DownloadButton: {
+   margin: SPACING.space_20,
+   backgroundColor: COLORS.primaryOrangeHex,
+   alignItems:'center',
+   justifyContent: 'center',
+   height: SPACING.space_36 *2,
+   borderRadius:BORDERRADIUS.radius_20
+  },
+  ButtonText: {
+   fontFamily: FONTFAMILY.poppins_semibold,
+   fontSize: FONTSIZE.size_18,
+   color:COLORS.primaryWhiteHex
   }
 })
 export default OrderHistoryScreen
