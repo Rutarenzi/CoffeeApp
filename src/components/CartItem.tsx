@@ -30,8 +30,6 @@ const CartItem: React.FC<CartItemProps> = ({
     <View>
       {prices.length != 1 ? (
         <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
           colors={[COLORS.secondaryGreyHex, COLORS.primaryBlackHex]}
           style={styles.CartItemLinearGradient}
         >
@@ -95,8 +93,6 @@ const CartItem: React.FC<CartItemProps> = ({
         </LinearGradient>
       ) : (
         <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
           colors={[COLORS.secondaryGreyHex, COLORS.primaryBlackHex]}
           style={styles.CartItemSingleLinearGradient}
         >

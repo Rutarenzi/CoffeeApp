@@ -43,8 +43,6 @@ const CoffeeCard: React.FC<CoffeeCardProps> = ({
 }) => {
   return (
     <LinearGradient
-      start={{ x: 0, y: 0 }}
-      end={{ x: 1, y: 1 }}
       style={styles.CardLinearGradientContainer}
       colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
     >

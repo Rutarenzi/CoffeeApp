@@ -20,8 +20,6 @@ const OrderItemCard:React.FC<OrderItemCard> = ({
 }) => {
   return (
     <LinearGradient 
-    start={{x:0,y:0}}
-    end={{x:1,y:1}}
     colors={[COLORS.primaryGreyHex,COLORS.primaryBlackHex]}
     style={styles.CardLinearGradient}
     >

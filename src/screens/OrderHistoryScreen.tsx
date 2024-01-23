@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import useStore from '../store/store';
 import { useBottomTabBarHeight } from '@react-navigation/bottom-tabs';
@@ -8,7 +8,14 @@ import OrderHistoryCard from '../components/OrderHistoryCard';
 
 const OrderHistoryScreen = ({navigation}:any) => {
 const OrderHistoryList = useStore((state: any)=>state.OrderHistoryList)
+const clear = useStore((state: any)=>state.clearStore)
 const tabBarHeight = useBottomTabBarHeight();
+// useEffect(()=>{
+//    const clears =async()=>{
+//     await clear()
+//    }
+//    clears()
+// },[])
 const navigationHandler =({index,id,type}:any)=>{
 navigation.push('Details',{
   index,
@@ -43,7 +50,7 @@ return (
         </View>
       )}
       </View>
-   {OrderHistoryCard.length > 0?(
+   {OrderHistoryList.length > 0?(
     <TouchableOpacity style={styles.DownloadButton}
     onPress={()=>{
       buttonPressHandler();

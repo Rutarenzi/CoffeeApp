@@ -23,8 +23,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({ paymentMode, name, icon, 
     >
       {isIcon ? (
         <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
           colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
           style={styles.LinearGradientWallet}
         >
@@ -36,8 +34,6 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({ paymentMode, name, icon, 
         </LinearGradient>
       ) : (
         <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
           colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
           style={styles.LinearGradientRegular}
         >

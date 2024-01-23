@@ -88,8 +88,6 @@ const PaymentScreen = ({ navigation, route }: any) => {
               <Text style={styles.CreditCardTitle}>Credit Card</Text>
               <View style={styles.CreditCardBG}>
                 <LinearGradient
-                  start={{ x: 0, y: 0 }}
-                  end={{ x: 0, y: 0 }}
                   style={styles.LinearGradientStyle}
                   colors={[COLORS.primaryGreyHex, COLORS.primaryBlackHex]}
                 >
